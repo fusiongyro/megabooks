@@ -16,7 +16,7 @@ public class BookDao {
     public BookDao() {
     }
 
-    @PersistenceContext(unitName="default")
+    @PersistenceContext
     private EntityManager em;
 
     public Book getFirstBook() {
