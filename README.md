@@ -18,8 +18,10 @@ The project is currently under development and highly unfinished.
  - Java EE 6 Web Profile server.
 
    _Tested with Resin 4 and Glassfish 4_
+
  - Database
 
    _Tested with PostgreSQL 9.3_
+
  - Extreme anal-retentivity
 

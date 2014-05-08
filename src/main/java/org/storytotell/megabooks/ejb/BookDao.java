@@ -8,18 +8,17 @@ import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
 /**
- * Created by fusion on 5/7/14.
+ * A simple DAO for accessing books.
  */
 @Stateless
 @Named
 public class BookDao {
-    public BookDao() {
-    }
+    public BookDao() {}
 
     @PersistenceContext
     private EntityManager em;
 
     public Book getFirstBook() {
-        return em.find(Book.class, "1");
+        return em.find(Book.class, "2");
     }
 }
