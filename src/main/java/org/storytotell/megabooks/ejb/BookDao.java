@@ -21,4 +21,13 @@ public class BookDao {
     public Book getFirstBook() {
         return em.find(Book.class, "2");
     }
+
+    /**
+     * Return a book based on the supplied locator. The locator may be an ID, an ISBN or a book alias.
+     * @param locator  Any reasonable book identifier.
+     * @return  The located book
+     */
+    public Book findBook(String locator) {
+        return em.find(Book.class, locator);
+    }
 }
