@@ -30,4 +30,14 @@ public class BookDao {
     public Book findBook(String locator) {
         return em.find(Book.class, locator);
     }
+
+    /**
+     * Return a random book title. Fun for the search box.
+     */
+    public String getRandomBookTitle() {
+        return ((Book)em
+                .createNativeQuery("SELECT * FROM books ORDER BY RANDOM() LIMIT 1", Book.class)
+                .getSingleResult())
+               .getTitle();
+    }
 }
