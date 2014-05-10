@@ -1,13 +1,14 @@
 <?xml version='1.0' encoding='UTF-8' ?>
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://java.sun.com/jsf/html"
-      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:pretty="http://ocpsoft.com/prettyfaces"
       lang="en">
 <h:head>
     <title>Megabooks - <ui:insert name="title"/></title>
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css"/>
     <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet"/>
     <h:outputStylesheet library="css" name="bootstrap.min.css"/>
+    <h:outputStylesheet library="css" name="styles.css"/>
 
     <meta charset="utf-8"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
@@ -15,16 +16,17 @@
 </h:head>
 <h:body>
 
+    <div class="container">
     <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
         <div class="container">
             <div class="navbar-header">
-                <a class="navbar-brand" href="#">Megabooks</a>
+                <pretty:link mappingId="home" styleClass="navbar-brand">Megabooks</pretty:link>
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
                     <li class="active"><a href="#">Admin</a></li>
                     <li><a href="#">Browse</a></li>
-                    <li><a href="#"><i class="fa fa-envelope-o"></i> Contact</a></li>
+                    <li><a href="#">Contact</a></li>
                 </ul>
                 <form class="navbar-form navbar-right" role="form">
                     <div class="form-group">
@@ -37,50 +39,17 @@
         </div>
     </div>
 
-    <!-- Main jumbotron for a primary marketing message or call to action -->
-    <div class="jumbotron">
-        <div class="container">
-            <h1>Hello, world!</h1>
-
-            <p>This is a template for a simple marketing or informational website. It includes a large callout called a jumbotron and three supporting pieces of content. Use it as a starting point to create something more unique.</p>
-
-            <p><a class="btn btn-primary btn-lg" role="button">Learn more</a></p>
+    <div class="container main">
+        <div class="row">
+            <ui:insert name="body"/>
+        </div>
+        <div class="row">
+            <hr/>
+            <footer>
+                <p>© 2014 Daniel Lyons</p>
+            </footer>
         </div>
     </div>
-
-    <div class="container">
-        <!-- Example row of columns -->
-        <div class="row">
-            <div class="col-md-4">
-                <h2>Heading</h2>
-
-                <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-
-                <p><a class="btn btn-default" href="#" role="button">View details</a></p>
-            </div>
-            <div class="col-md-4">
-                <h2>Heading</h2>
-
-                <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-
-                <p><a class="btn btn-default" href="#" role="button">View details</a></p>
-            </div>
-            <div class="col-md-4">
-                <h2>Heading</h2>
-
-                <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-
-                <p><a class="btn btn-default" href="#" role="button">View details</a></p>
-            </div>
-        </div>
-
-        <hr/>
-
-        <ui:insert name="body"/>
-
-        <footer>
-            <p> Company 2014</p>
-        </footer>
     </div>
     <!-- /container -->
 

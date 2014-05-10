@@ -4,7 +4,11 @@
 <ui:composition template="resources/template.xhtml">
     <ui:define name="title">Home</ui:define>
     <ui:define name="body">
-        Hello from Facelets! The first book in the database is <h:outputText value="#{bookDao.firstBook.title}"/>.
+        <div class="col-md-12">
+            <h1>Hello from Facelets!</h1>
+
+            <p>The first book in the database is <h:outputText value="#{bookDao.firstBook.title}"/>.</p>
+        </div>
     </ui:define>
 </ui:composition>
 </html>
