@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html" xmlns:ui="http://java.sun.com/jsf/facelets">
+<ui:composition template="resources/template.xhtml">
+    <ui:define name="title">Home</ui:define>
+    <ui:define name="body">
+        <div class="col-md-12">
+            <h1>Hello from Facelets!</h1>
+
+            <p>The first book in the database is #{kBookDao.firstBook.title}.</p>
+        </div>
+    </ui:define>
+</ui:composition>
+</html>
