@@ -9,6 +9,7 @@
     <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet"/>
     <h:outputStylesheet library="css" name="bootstrap.min.css"/>
     <h:outputStylesheet library="css" name="styles.css"/>
+
     <meta charset="utf-8"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
@@ -16,39 +17,39 @@
 <h:body>
 
     <div class="container">
-        <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-            <div class="container">
-                <div class="navbar-header">
-                    <pretty:link mappingId="home" styleClass="navbar-brand">Megabooks</pretty:link>
-                </div>
-                <div class="navbar-collapse collapse">
-                    <ul class="nav navbar-nav">
-                        <li class="active"><a href="#">Admin</a></li>
-                        <li><a href="#">Browse</a></li>
-                        <li><a href="#">Contact</a></li>
-                    </ul>
-                    <form class="navbar-form navbar-right" role="form">
-                        <div class="form-group">
-                            <input type="text" placeholder="#{bookDao.randomBookTitle}" class="form-control"/>
-                        </div>
-                        <button type="submit" class="btn btn-success">Search</button>
-                    </form>
-                </div>
-                <!--/.navbar-collapse -->
+    <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <pretty:link mappingId="home" styleClass="navbar-brand">Megabooks</pretty:link>
             </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href="#">Admin</a></li>
+                    <li><a href="#">Browse</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+                <form class="navbar-form navbar-right" role="form">
+                    <div class="form-group">
+                        <input type="text" placeholder="#{kBookDao.randomBookTitle}" class="form-control"/>
+                    </div>
+                    <button type="submit" class="btn btn-success">Search</button>
+                </form>
+            </div>
+            <!--/.navbar-collapse -->
         </div>
+    </div>
 
-        <div class="container main">
-            <div class="row">
-                <ui:insert name="body"/>
-            </div>
-            <div class="row">
-                <hr/>
-                <footer>
-                    <p>© 2014 Daniel Lyons</p>
-                </footer>
-            </div>
+    <div class="container main">
+        <div class="row">
+            <ui:insert name="body"/>
         </div>
+        <div class="row">
+            <hr/>
+            <footer>
+                <p>© 2014 Daniel Lyons</p>
+            </footer>
+        </div>
+    </div>
     </div>
     <!-- /container -->
 

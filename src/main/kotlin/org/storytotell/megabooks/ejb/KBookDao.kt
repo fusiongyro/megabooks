@@ -11,9 +11,9 @@ import javax.persistence.PersistenceContext;
 /**
  * A simple DAO for accessing books.
  */
-Named
 Stateless
-public open class BookDao() : IBookDao {
+Named("kBookDao")
+public open class KBookDao() : KIBookDao {
 
     PersistenceContext
     private var em: EntityManager? = null
