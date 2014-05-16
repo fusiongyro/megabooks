@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-mappings xmlns="http://java.sun.com/xml/ns/persistence/orm"
+        version="2.0">
+
+    <entity class="org.storytotell.megabooks.entity.Book">
+        <table name="books" schema="public" catalog="library"/>
+        <attributes>
+            <id name="id">
+                <column name="id"/>
+            </id>
+            <basic name="title">
+                <column name="title"/>
+            </basic>
+            <basic name="author">
+                <column name="author"/>
+            </basic>
+            <basic name="isbn">
+                <column name="isbn"/>
+            </basic>
+            <basic name="ddc">
+                <column name="ddc"/>
+            </basic>
+            <basic name="image">
+                <column name="image"/>
+            </basic>
+        </attributes>
+    </entity>
+    <entity class="org.storytotell.megabooks.entity.Borrower">
+        <table name="borrowers" schema="public" catalog="library"/>
+        <id-class class="org.storytotell.megabooks.entity.BorrowerPK"/>
+        <attributes>
+            <id name="bookId">
+                <column name="book_id"/>
+            </id>
+            <id name="borrowedOn">
+                <column name="borrowed_on"/>
+            </id>
+            <basic name="name">
+                <column name="name"/>
+            </basic>
+            <basic name="email">
+                <column name="email"/>
+            </basic>
+            <basic name="phone">
+                <column name="phone"/>
+            </basic>
+            <basic name="returnedOn">
+                <column name="returned_on"/>
+            </basic>
+        </attributes>
+    </entity>
+    <entity class="org.storytotell.megabooks.entity.Classification">
+        <table name="classifications" schema="public" catalog="library"/>
+        <id-class class="org.storytotell.megabooks.entity.ClassificationPK"/>
+        <attributes>
+            <id name="isbn">
+                <column name="isbn"/>
+            </id>
+            <id name="label">
+                <column name="label"/>
+            </id>
+            <basic name="clazz">
+                <column name="class"/>
+            </basic>
+        </attributes>
+    </entity>
+</entity-mappings>
