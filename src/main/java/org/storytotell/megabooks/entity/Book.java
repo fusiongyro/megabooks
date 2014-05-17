@@ -16,7 +16,6 @@ public class Book {
     public String getId() {
         return id;
     }
-
     public void setId(String id) {
         this.id = id;
     }
@@ -24,7 +23,6 @@ public class Book {
     public String getTitle() {
         return title;
     }
-
     public void setTitle(String title) {
         this.title = title;
     }
@@ -32,7 +30,6 @@ public class Book {
     public String getAuthor() {
         return author;
     }
-
     public void setAuthor(String author) {
         this.author = author;
     }
@@ -40,7 +37,6 @@ public class Book {
     public String getIsbn() {
         return isbn;
     }
-
     public void setIsbn(String isbn) {
         this.isbn = isbn;
     }
@@ -48,7 +44,6 @@ public class Book {
     public String getDdc() {
         return ddc;
     }
-
     public void setDdc(String ddc) {
         this.ddc = ddc;
     }
@@ -56,7 +51,6 @@ public class Book {
     public byte[] getImage() {
         return image;
     }
-
     public void setImage(byte[] image) {
         this.image = image;
     }

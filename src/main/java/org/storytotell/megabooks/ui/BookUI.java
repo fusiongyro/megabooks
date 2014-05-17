@@ -1,20 +1,22 @@
-package org.storytotell.megabooks.ejb;
+package org.storytotell.megabooks.ui;
 
+import org.storytotell.megabooks.ejb.BookDao;
 import org.storytotell.megabooks.entity.Book;
 
-import javax.ejb.EJB;
-import javax.ejb.Stateless;
+import javax.enterprise.context.RequestScoped;
+import javax.inject.Inject;
 import javax.inject.Named;
 
 /**
  * Created by fusion on 5/7/14.
  */
-@Stateless
 @Named
+@RequestScoped
 public class BookUI {
     public BookUI() {}
 
-    private @EJB BookDao dao;
+    @Inject
+    private BookDao dao;
 
     private Book book = null;
     private String locator = null;
@@ -30,7 +32,6 @@ public class BookUI {
     public String getLocator() {
         return locator;
     }
-
     public void setLocator(String locator) {
         this.locator = locator;
     }

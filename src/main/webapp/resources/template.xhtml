@@ -25,7 +25,7 @@
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
                     <li class="active"><a href="#">Admin</a></li>
-                    <li><a href="#">Browse</a></li>
+                    <li><pretty:link mappingId="browse">Browse</pretty:link></li>
                     <li><a href="#">Contact</a></li>
                 </ul>
                 <form class="navbar-form navbar-right" role="form">
@@ -41,7 +41,7 @@
 
     <div class="container main">
         <div class="row">
-            <ui:insert name="body"/>
+            <ui:insert/>
         </div>
         <div class="row">
             <hr/>

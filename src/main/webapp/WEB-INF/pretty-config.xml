@@ -12,4 +12,9 @@
         <view-id value="/book.jsf" />
         <action>#{bookUI.loadBook}</action>
     </url-mapping>
+
+    <url-mapping id="browse">
+        <pattern value="/browse"/>
+        <view-id value="/browse.jsf" />
+    </url-mapping>
 </pretty-config>

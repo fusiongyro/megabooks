@@ -6,12 +6,13 @@ import javax.ejb.Stateless;
 import javax.inject.Named;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import java.util.List;
 
 /**
  * A simple DAO for accessing books.
  */
-@Stateless
 @Named
+@Stateless
 public class BookDao {
     public BookDao() {}
 
@@ -20,6 +21,10 @@ public class BookDao {
 
     public Book getFirstBook() {
         return em.find(Book.class, "2");
+    }
+
+    public List<Book> getAllBooks() {
+        return em.createQuery("SELECT b FROM Book b ORDER BY b.id", Book.class).getResultList();
     }
 
     /**
