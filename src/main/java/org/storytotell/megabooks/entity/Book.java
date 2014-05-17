@@ -1,5 +1,7 @@
 package org.storytotell.megabooks.entity;
 
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.util.Arrays;
 
 /**
@@ -53,6 +55,16 @@ public class Book {
     }
     public void setImage(byte[] image) {
         this.image = image;
+    }
+
+    public URL getImageUrl() {
+        try {
+            return new URL(
+                    String.format("http://covers.openlibrary.org/b/isbn/%s-L.jpg", isbn));
+        }
+        catch (MalformedURLException e) {
+            return null;
+        }
     }
 
     @Override
