@@ -9,7 +9,7 @@
 
     <url-mapping id="book">
         <pattern value="/book/#{locator : bookUI.locator}"/>
-        <view-id value="/book.jsf" />
+        <view-id value="/book/index.jsf" />
         <action>#{bookUI.loadBook}</action>
     </url-mapping>
 

@@ -1,0 +1,66 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+<ui:composition template="../resources/template.xhtml">
+    <ui:define name="title">#{bookUI.book.title}</ui:define>
+
+    <p:dialog header="Check Out #{bookUI.book.title}" widgetVar="checkoutDialog" modal="true" position="center center">
+        <h:form>
+            <div class="modal-body">
+                <div class="form-group">
+                    <p:outputLabel for="name">Name</p:outputLabel>
+                    <p:inputText id="name"
+                                 label="Name"
+                                 value="#{checkoutForm.name}"
+                                 styleClass="form-control"
+                                 required="true"/>
+                    <p:watermark value="Your Name" for="name"/>
+                    <p:message for="name"/>
+                </div>
+                <div class="form-group">
+                    <p:outputLabel for="email">Email</p:outputLabel>
+                    <p:inputText id="email"
+                                 label="Email"
+                                 value="#{checkoutForm.email}"
+                                 styleClass="form-control"
+                                 required="true"/>
+                    <p:watermark value="you@somewhere.com" for="email"/>
+                    <p:message for="email"/>
+                </div>
+                <div class="form-group">
+                    <p:outputLabel for="phone">Phone</p:outputLabel>
+                    <p:inputMask id="phone"
+                                 label="Phone"
+                                 mask="(999) 999-9999"
+                                 value="#{checkoutForm.phone}"
+                                 styleClass="form-control"
+                                 required="true"/>
+                    <p:watermark value="(555) 555-1234" for="phone"/>
+                    <p:message for="phone"/>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <p:commandButton action="#{checkoutForm.checkout()}" value="Check Out" update="@form"/>
+            </div>
+        </h:form>
+    </p:dialog>
+
+    <div class="col-md-6" style="text-align: right">
+        <h:graphicImage styleClass="img-thumbnail"
+                        value="#{bookUI.book.imageUrl.toExternalForm()}"
+                        style="max-width: 600px; max-height: 600px;"/>
+    </div>
+    <div class="col-md-6">
+        <h1>#{bookUI.book.title}</h1>
+        <h2>#{bookUI.book.author}</h2>
+        <h3>#{bookUI.book.isbn}</h3>
+        <h3>#{bookUI.book.ddc}</h3>
+
+        <h:form>
+            <p:commandButton id="showCheckoutDialog" type="button" value="Check Out" onclick="checkoutDialog.show()"/>
+        </h:form>
+    </div>
+</ui:composition>
+</html>

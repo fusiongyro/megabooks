@@ -12,16 +12,15 @@ import javax.validation.constraints.Pattern;
 @RequestScoped
 public class CheckoutForm {
     @NotNull
-    private String name = "Your Name";
+    private String name = null;
 
-    @NotNull @Pattern(regexp = ".*@.*\\..*", message = "must be a real email address")
-    private String email = "you@somewhere.net";
+    @NotNull @Pattern(regexp = ".*@.*\\..*", message = "Email must be a real email address")
+    private String email = null;
 
-    @Pattern(regexp = "^[0-9 ()+-]*$", message = "must look more like a phone number")
-    private String phone = "(505) 555-1234";
+    @Pattern(regexp = "^[0-9 ()+-]*$", message = "Phone must look more like a phone number")
+    private String phone = null;
 
-    public CheckoutForm() {
-    }
+    public CheckoutForm() {}
 
     public void checkout() {
     }

@@ -5,8 +5,6 @@
       lang="en">
 <h:head>
     <title>Megabooks - <ui:insert name="title"/></title>
-    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css"/>
-    <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet"/>
     <h:outputStylesheet library="css" name="bootstrap.min.css"/>
     <h:outputStylesheet library="css" name="styles.css"/>
 
@@ -17,43 +15,40 @@
 <h:body>
 
     <div class="container">
-    <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-        <div class="container">
-            <div class="navbar-header">
-                <pretty:link mappingId="home" styleClass="navbar-brand">Megabooks</pretty:link>
+        <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+            <div class="container">
+                <div class="navbar-header">
+                    <pretty:link mappingId="home" styleClass="navbar-brand">Megabooks</pretty:link>
+                </div>
+                <div class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav">
+                        <li class="active"><a href="#">Admin</a></li>
+                        <li><pretty:link mappingId="browse">Browse</pretty:link></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                    <form class="navbar-form navbar-right" role="form">
+                        <div class="form-group">
+                            <input type="text" placeholder="#{bookDao.randomBookTitle}" class="form-control"/>
+                        </div>
+                        <button type="submit" class="btn btn-success">Search</button>
+                    </form>
+                </div>
+                <!--/.navbar-collapse -->
             </div>
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li class="active"><a href="#">Admin</a></li>
-                    <li><pretty:link mappingId="browse">Browse</pretty:link></li>
-                    <li><a href="#">Contact</a></li>
-                </ul>
-                <form class="navbar-form navbar-right" role="form">
-                    <div class="form-group">
-                        <input type="text" placeholder="#{bookDao.randomBookTitle}" class="form-control"/>
-                    </div>
-                    <button type="submit" class="btn btn-success">Search</button>
-                </form>
-            </div>
-            <!--/.navbar-collapse -->
         </div>
-    </div>
 
-    <div class="container main">
-        <div class="row">
-            <ui:insert/>
+        <div class="container main">
+            <div class="row">
+                <ui:insert/>
+            </div>
+            <div class="row" style="padding-top: 2in">
+                <hr/>
+                <footer>
+                    <p>© 2014 Daniel Lyons</p>
+                </footer>
+            </div>
         </div>
-        <div class="row">
-            <hr/>
-            <footer>
-                <p>© 2014 Daniel Lyons</p>
-            </footer>
-        </div>
-    </div>
     </div>
     <!-- /container -->
-
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-    <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
 </h:body>
 </html>

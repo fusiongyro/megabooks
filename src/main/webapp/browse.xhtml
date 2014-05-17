@@ -2,40 +2,33 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://java.sun.com/jsf/html"
       xmlns:ui="http://java.sun.com/jsf/facelets"
-      xmlns:f="http://java.sun.com/jsf/core" xmlns:pretty="http://ocpsoft.com/prettyfaces">
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:pretty="http://ocpsoft.com/prettyfaces"
+      xmlns:p="http://primefaces.org/ui">
 <ui:composition template="resources/template.xhtml">
     <ui:define name="title">Home</ui:define>
 
     <div class="col-md-12">
-        <h:dataTable value="#{bookDao.allBooks}" var="book" styleClass="table table-striped">
-            <h:column>
-                <f:facet name="header">ID</f:facet>
-                #{book.id}
-            </h:column>
+        <p:dataTable value="#{bookDao.allBooks}"
+                     var="book"
+                     paginator="true"
+                     rows="25"
+                     paginatorTemplate="{CurrentPageReport}  {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"
+                     rowsPerPageTemplate="10,25,50,100">
 
-            <h:column>
-                <f:facet name="header">Title</f:facet>
+            <p:column sortBy="id" headerText="ID">#{book.id}</p:column>
+
+            <p:column sortBy="title" headerText="Title">
                 <pretty:link mappingId="book">
                     <f:param value="#{book.id}"/>
                     #{book.title}
                 </pretty:link>
-            </h:column>
+            </p:column>
 
-            <h:column>
-                <f:facet name="header">Author</f:facet>
-                #{book.author}
-            </h:column>
-
-            <h:column>
-                <f:facet name="header">ISBN</f:facet>
-                #{book.isbn}
-            </h:column>
-
-            <h:column>
-                <f:facet name="header">DDC</f:facet>
-                #{book.ddc}
-            </h:column>
-        </h:dataTable>
+            <p:column sortBy="author" headerText="Author">#{book.author}</p:column>
+            <p:column sortBy="ddc"    headerText="DDC"   >#{book.ddc}</p:column>
+            <p:column sortBy="isbn"   headerText="ISBN"  >#{book.isbn}</p:column>
+        </p:dataTable>
     </div>
 </ui:composition>
 </html>
