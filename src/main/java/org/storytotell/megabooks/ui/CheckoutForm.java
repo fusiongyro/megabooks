@@ -1,6 +1,10 @@
 package org.storytotell.megabooks.ui;
 
+import org.storytotell.megabooks.ejb.BookDao;
+import org.storytotell.megabooks.entity.Book;
+
 import javax.enterprise.context.RequestScoped;
+import javax.inject.Inject;
 import javax.inject.Named;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
@@ -20,9 +24,16 @@ public class CheckoutForm {
     @Pattern(regexp = "^[0-9 ()+-]*$", message = "Phone must look more like a phone number")
     private String phone = null;
 
+    @Inject @Current
+    private Book book;
+
+    @Inject
+    private BookDao bookDao;
+
     public CheckoutForm() {}
 
     public void checkout() {
+        // bookDao.checkoutBook(name, phone, email, book);
     }
 
     public String getName() {

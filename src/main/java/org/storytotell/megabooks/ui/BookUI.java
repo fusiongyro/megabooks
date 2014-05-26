@@ -4,6 +4,7 @@ import org.storytotell.megabooks.ejb.BookDao;
 import org.storytotell.megabooks.entity.Book;
 
 import javax.enterprise.context.RequestScoped;
+import javax.enterprise.inject.Produces;
 import javax.inject.Inject;
 import javax.inject.Named;
 
@@ -25,6 +26,7 @@ public class BookUI {
         book = dao.findBook(locator);
     }
 
+    @Produces @Current
     public Book getBook() {
         return book;
     }

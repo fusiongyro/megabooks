@@ -1,6 +1,7 @@
 package org.storytotell.megabooks.ejb;
 
 import org.storytotell.megabooks.entity.Book;
+import org.storytotell.megabooks.entity.Borrower;
 
 import javax.ejb.Stateless;
 import javax.inject.Named;
@@ -23,6 +24,10 @@ public class BookDao {
         return em.find(Book.class, "2");
     }
 
+    /**
+     * Get all of the books in the database. Expensive!
+     * @return a list of every book
+     */
     public List<Book> getAllBooks() {
         return em.createQuery("SELECT b FROM Book b ORDER BY b.id", Book.class).getResultList();
     }
