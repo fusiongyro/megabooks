@@ -90,6 +90,25 @@
                 </configuration>
             </plugin>
 
+            <!-- compiling JAXB classes -->
+          <plugin>
+            <groupId>org.codehaus.mojo</groupId>
+            <artifactId>jaxb2-maven-plugin</artifactId>
+            <version>1.6</version>
+
+            <executions>
+              <execution>
+                <goals><goal>xjc</goal></goals>
+              </execution>
+            </executions>
+
+            <configuration>
+              <schemaDirectory>${basedir}/src/main/resources/org/storytotell/megabooks/oclc/classify</schemaDirectory>
+              <packageName>org.storytotell.megabooks.oclc.classify</packageName>
+              <outputDirectory>${basedir}/src/main/java</outputDirectory>
+            </configuration>
+          </plugin>
+
             <!-- All of the ensuing were part of what the archetype generated and thus I don't understand them :) -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
